@@ -2,7 +2,7 @@ import os
 import sys
 import json
 
-das_module_path = os.path.abspath('./stardas_v0')
+das_module_path = os.path.abspath('stardas_v0')
 if das_module_path not in sys.path:
     sys.path.append(das_module_path)
 
@@ -20,7 +20,7 @@ def that_is_svc():
 
 @app.route("/genmeadastag/")
 def host_dastag():
-    return str((os.path.abspath('./stardas_v0'), sys.path))
+    return str((os.path.abspath('stardas_v0'), sys.path))
     return dastag()
 
 if __name__ == '__main__':
