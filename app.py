@@ -2,10 +2,11 @@ import os
 import sys
 import json
 
-#derp_module_path = os.path.abspath('..')
-#if derp_module_path not in sys.path:
-#    sys.path.append(derp_module_path)
+das_module_path = os.path.abspath('./stardas_v0')
+if das_module_path not in sys.path:
+    sys.path.append(das_module_path)
 
+from stardas import dastag
 from flask import Flask, render_template, request, jsonify
 
 from that_is_not_calculus import gen_thatthatis
@@ -17,6 +18,9 @@ def that_is_svc():
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
 
+@app.route("/genmeadastag/")
+def host_dastag():
+    return dastag()
 
 if __name__ == '__main__':
     app.run(debug=True)
